@@ -1,0 +1,19 @@
+<div class="container">
+<form [formGroup]="myform" (ngSubmit)="onFormSubmit()">
+  <div class="form-group">
+    <div class="form-group w-40">
+    <label for="name">First Name: </label>
+    <input type="name" class="form-control" id="exampleInputname" placeholder="Enter name" formControlName="providerName">
+    </div>
+    <div class="form-group w-40">
+    <label for="name">Email:  </label>
+    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email" formControlName="providerEmail">
+    </div>
+    <div class="form-group w-40">
+    <label for="name">Adress: </label>
+    <input type="adress" class="form-control" id="exampleInputAdress" placeholder="Enter adress" formControlName="providerAdress">
+    </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+  </div>

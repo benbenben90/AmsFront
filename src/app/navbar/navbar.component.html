@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">AMS</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
+  <a class="nav-item nav-link" routerLink="/listProvider" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Providers</a>
+  <a class="nav-item nav-link" routerLink="/listArticle" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Articles</a>
+  <a class="nav-item nav-link" routerLink="/login" *ngIf="!loginService.isUserLoggedIn()" routerLinkActive="active">Login</a>
+  <a class="nav-item nav-link" routerLink="/logout" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">LogOut</a>
+</div>
+</div>
+</nav>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<router-outlet></router-outlet>

@@ -1,0 +1,51 @@
+<p class="my-5">
+  <a class="btn btn-success" routerLink="/addArticle"
+    ><i class="fa fa-user-plus ml-2"> Add Article</i></a
+  >
+</p>
+<div class="col-md-10">
+  <h2 *ngIf="listArticles.length === 0">No Articles yet!</h2>
+  <div *ngIf="listArticles.length != 0">
+    <table class="table table-striped table-responsive- md">
+      <thead>
+        <tr>
+          <div class="col-md-10">
+            <h2 *ngIf="listArticles.length === 0">No Providers yet!</h2>
+            <div *ngIf="listArticles.length != 0">
+              <table class="table table-striped table-responsive- md">
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Price</th>
+                    <th>Provider</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let article of listArticles">
+                    <td>{{ article.label }}</td>
+                    <td>{{ article.price }}</td>
+                    <td>{{ article.provider.name }}</td>
+                    <td>
+                      <a
+                        class="btn btn-warning"
+                        [routerLink]="['/editArticle', article.id]"
+                        ><i class="fa fa-edit ml-2"></i
+                      ></a>
+                    </td>
+                    <td>
+                      <a class="btn btn-danger" (click)="deleteArticle(article)"
+                        ><i class="fa fa-user-times ml-2"></i
+                      ></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
